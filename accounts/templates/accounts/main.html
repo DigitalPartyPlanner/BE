@@ -1,7 +1,7 @@
 <body>
     {% if request.user.is_authenticated %}
         <p>{{ user.username }}</p> <!-- 닉네임 -->
-        <a href="#">마이룸</a>
+        <a href="{% url 'cakes:ownroom' user.id %}">마이룸</a>
         <a href="#">친구목록</a>
         <a href="{% url 'accounts:logout' %}">로그아웃</a>
     {% else %}
